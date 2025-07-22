@@ -1,0 +1,11 @@
+image: gitpod/workspace-full-vnc
+tasks:
+  - init: |
+      echo "Starting VNC setup..."
+      # Any initialization commands (optional)
+    command: |
+      # Start noVNC server
+      /usr/share/novnc/utils/launch.sh --vnc localhost:5901 --listen 6080
+ports:
+  - port: 6080
+    onOpen: open-browser
